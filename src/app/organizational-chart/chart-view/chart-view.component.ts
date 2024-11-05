@@ -1,29 +1,64 @@
-import { Component, ViewEncapsulation, ViewChild, TemplateRef } from '@angular/core';
-import { IClickEventArgs, ISelectionChangeEventArgs, NodeConstraints, DiagramModule, OverviewModule } from '@syncfusion/ej2-angular-diagrams';
-import
-{
+import {
+  ButtonModule,
+  CheckBoxModule,
+  RadioButtonModule,
+} from '@syncfusion/ej2-angular-buttons';
+import { DropDownButtonModule } from '@syncfusion/ej2-angular-splitbuttons';
+import {
+  NumericTextBoxModule,
+  ColorPickerModule,
+  UploaderModule,
+  TextBoxModule,
+} from '@syncfusion/ej2-angular-inputs';
+import { ToolbarModule } from '@syncfusion/ej2-angular-navigations';
+import { ComboBoxAllModule } from '@syncfusion/ej2-angular-dropdowns';
+import { SplitButtonModule } from '@syncfusion/ej2-angular-splitbuttons';
+import { MultiSelectModule } from '@syncfusion/ej2-angular-dropdowns';
+import { DropDownListAllModule } from '@syncfusion/ej2-angular-dropdowns';
+import { CircularGaugeModule, linear } from '@syncfusion/ej2-angular-circulargauge';
+import { DateRangePickerModule } from '@syncfusion/ej2-angular-calendars';
+import { ListViewAllModule } from '@syncfusion/ej2-angular-lists';
+import { GridAllModule } from '@syncfusion/ej2-angular-grids';
+import { TreeViewModule } from '@syncfusion/ej2-angular-navigations';
+import {
+  DiagramAllModule,
+  SymbolPaletteAllModule,
+  OverviewAllModule,
+} from '@syncfusion/ej2-angular-diagrams';
+import {
+  ChartAllModule,
+} from '@syncfusion/ej2-angular-charts';
+import { AccumulationChartModule } from '@syncfusion/ej2-angular-charts';
+import { DialogAllModule } from '@syncfusion/ej2-angular-popups';
+import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
+import {
+  DiagramComponent,
   Diagram,
   NodeModel,
   ConnectorModel,
   LayoutAnimation,
-  DataBinding,
-  HierarchicalTree,
-  SnapConstraints,
+  TreeInfo,
   SnapSettingsModel,
   DiagramTools,
-  Container,
-  StackPanel,
-  TextElement,
-} from '@syncfusion/ej2-diagrams';
-import { DataManager, Query } from '@syncfusion/ej2-data';
-import { TreeViewModule } from '@syncfusion/ej2-angular-navigations';
-import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
+  Node,
+  DataBinding,
+  HierarchicalTree,
+  SnapConstraints
+} from '@syncfusion/ej2-angular-diagrams';
+import { DataManager } from '@syncfusion/ej2-data';
+import { DataSourceModel, DiagramConstraints, IClickEventArgs, ISelectionChangeEventArgs, LayoutModel, NodeConstraints } from '@syncfusion/ej2-diagrams';
 import { HttpClient } from '@angular/common/http';
-import { Role } from '../../models/role';
-import { RoleWithUsers } from '../list-view/list-view.component';
+import { Role, Role_Temp } from '../../models/role';
 import { CommonModule } from '@angular/common';
 Diagram.Inject(DataBinding, HierarchicalTree, LayoutAnimation);
 
+export interface EmployeeInfo {
+  Role: string;
+  color: string;
+}
+export interface DataInfo {
+  [key: string]: string;
+}
 @Component({
   selector: 'app-chart-view',
   templateUrl: './chart-view.component.html',
@@ -31,15 +66,80 @@ Diagram.Inject(DataBinding, HierarchicalTree, LayoutAnimation);
   encapsulation: ViewEncapsulation.None,
   standalone: true,
   imports: [
+    DiagramAllModule,
+    ChartAllModule,
+    GridAllModule,
+    SymbolPaletteAllModule,
+    OverviewAllModule,
     ButtonModule,
+    ColorPickerModule,
+    DateRangePickerModule,
+    CheckBoxModule,
+    AccumulationChartModule,
+    ToolbarModule,
+    DropDownButtonModule,
+    UploaderModule,
+    CircularGaugeModule,
+    DropDownListAllModule,
+    ListViewAllModule,
+    DialogAllModule,
+    TextBoxModule,
+    RadioButtonModule,
+    ComboBoxAllModule,
+    SplitButtonModule,
+    MultiSelectModule,
+    NumericTextBoxModule,
     TreeViewModule,
-    DiagramModule,
-    CommonModule,
-    OverviewModule
+    CommonModule
   ],
 })
 export class ChartViewComponent
 {
+  @ViewChild('diagram')
+  public diagram!: DiagramComponent;
+  public snapSettings: SnapSettingsModel = {
+    constraints: SnapConstraints.None,
+  };
+  public tool = DiagramTools.Default;
+  public diagramConstraints = DiagramConstraints.Default & ~DiagramConstraints.UserInteraction;
+  public dataSourceSettings: DataSourceModel = {
+    id: 'id',
+    parentId: 'pid',
+    dataSource: new DataManager([]),
+    doBinding: (nodeModel: NodeModel, data: object, diagram: Diagram) => {
+      nodeModel.id = (data as Role).id;
+      nodeModel.data = data;
+    }
+  };
+  public layout: LayoutModel = {
+    type: 'HierarchicalTree',
+    verticalSpacing: 60,
+    horizontalSpacing: 40,
+    enableAnimation: true,
+    orientation: 'TopToBottom',
+    margin: { top: 20, left: 20 },
+    // Add branch spacing
+    getBranch: (node: NodeModel) => {
+      return !node.isExpanded;
+    }
+  };
+
+  public created() {
+    //this.diagram.created();
+  }
+
+  public nodeDefaults(node: NodeModel): NodeModel
+  {
+    node.shape = { type: 'HTML' };;
+    node.width = 150;
+    node.height = 70;
+    node.style = { strokeWidth: 1, strokeColor: 'whitesmoke', fill: 'CornflowerBlue' };
+    node.annotations = [{ content: (node.data as any).name, style: { color: 'white' } }];
+    node.constraints = NodeConstraints.Default | NodeConstraints.AllowDrop;
+    node.expandIcon = { height: 0, width: 0 };
+    node.collapseIcon = { height: 0, width: 0 };
+    return node;
+  }
   public connectorDefaults(obj: ConnectorModel, diagram: Diagram): ConnectorModel
   {
     obj.type = 'Orthogonal';
@@ -47,116 +147,83 @@ export class ChartViewComponent
     obj.targetDecorator = { shape: 'Arrow', height: 10, width: 10, style: { fill: 'CornflowerBlue', strokeColor: 'white' } };
     return obj;
   }
-  public nodeDefaults(node: NodeModel): NodeModel
-  {
-    node.width = 100;
-    node.height = 40;
-    node.style = { strokeWidth: 1, strokeColor: 'whitesmoke', fill: 'CornflowerBlue' };
-    node.annotations = [{ content: (node.data as any).name, style: { color: 'white' } }];
-    node.constraints = NodeConstraints.Default | NodeConstraints.AllowDrop;
-    return node;
+  clicked(){
+    alert('6516516')
   }
-  public layout: Object = {
-    type: 'HierarchicalTree',
-    verticalSpacing: 60,
-    horizontalSpacing: 40,
-    enableAnimation: true,
-    orientation: 'TopToBottom'
-  };
-  public snapSettings: SnapSettingsModel = {
-    constraints: SnapConstraints.None,
-  };
+  public selectionChange(args: ISelectionChangeEventArgs)
+  {
+  }
 
-  public tools = DiagramTools.Default;
-  public dataSourceSettings: Object = {
-    id: 'id',
-    parentId: 'pid',
-    dataSource: new DataManager([]),
-    doBinding: (nodeModel: NodeModel, data: object, diagram: Diagram) => {
-      nodeModel.id = (data as any).id;
-      nodeModel.data = data;
+  public click(args: IClickEventArgs)
+  {
+    if (args.element && (args.element as any).sourceID === undefined && (args.element as any).shape !== undefined)
+    {
+
     }
-  };
-  public textEdit(args: any)
-  {
   }
-  public drop(args: any)
-  {
-
-  }
-  public dragEnter(args: any)
-  {
-  }
-
   constructor(
     private http: HttpClient
   ) { }
-
   ngOnInit(): void
   {
     this.http.get<Role[]>('assets/data/role-with-user.json')
       .subscribe((data: Role[]) =>
       {
+        data.forEach(role => role.expanded = true);
         this.dataSourceSettings = {
           id: 'id',
           parentId: 'pid',
           dataSource: new DataManager(data),
           doBinding: (nodeModel: NodeModel, data: object, diagram: Diagram) => {
-            nodeModel.id = (data as any).id;
-            nodeModel.data = data;
-            // Set appropriate size based on content
-            nodeModel.width = 180;
-            nodeModel.height = (data as any).isRole && (data as any).users?.length
-              ? 40 + ((data as any).users.length * 25)
-              : 40;
-          }
+            nodeModel.shape = {
+              type: 'Text',
+              content: (data as Role).name,
+              margin: { left: 10, right: 10, top: 10, bottom: 10 },
+            };
+          },
         };
       });
   }
+  // In chart-view-test.component.ts
+  public toggleExpand(data: Role) {
+    data.expanded = !data.expanded;
+
+    if (this.diagram) {
+      // Get the current diagram data
+      const dataManager = this.dataSourceSettings.dataSource as DataManager;
+      const originalData = dataManager.dataSource.json || dataManager.dataSource;
+
+      // Update the node's expanded state
+      const updatedNode = (originalData as Role[]).find((item: Role) => item.id === data.id);
+      if (updatedNode) {
+        updatedNode.expanded = data.expanded;
+      }
+
+      // Clear existing nodes and connectors
+      this.diagram.clear();
+
+      // Update the datasource
+      this.dataSourceSettings = {
+        id: 'id',
+        parentId: 'pid',
+        dataSource: new DataManager(originalData),
+        doBinding: (nodeModel: NodeModel, data: object, diagram: Diagram) => {
+          nodeModel.shape = {
+            type: 'Text',
+            content: (data as Role).name,
+            margin: { left: 10, right: 10, top: 10, bottom: 10 },
+          };
+          // Set collapsed state
+          nodeModel.isExpanded = (data as Role).expanded;
+        },
+      };
+
+      // Force diagram to update
+      this.diagram.updateConnectorEdges;
+      this.diagram.dataBind();
+      this.diagram.doLayout();
+    }
+  }
+  }
 
 
-  protected setNodeTemplate(obj: NodeModel, diagram: Diagram): Container {
-    const data = obj.data as Role;
-
-    // Create the outer container for the node content.
-    let content: StackPanel = new StackPanel();
-    content.id = data.id + '_outerstack';
-    content.orientation = 'Horizontal';
-    content.style.strokeColor = 'gray';
-    content.padding = { left: 5, right: 10, top: 5, bottom: 5 };
-
-    // Create an image element for the employee image.
-    let roleName: TextElement = new TextElement();
-    roleName.content = data.name ? data.name : '';
-    roleName.width = 100;
-    roleName.height = 50;
-    roleName.style.strokeColor = 'none';
-    roleName.id = data.id;
-
-    // Create an inner stack panel for text elements (name and designation).
-    let innerStack: StackPanel = new StackPanel();
-    innerStack.style.strokeColor = 'none';
-    innerStack.margin = { left: 5, right: 0, top: 0, bottom: 0 };
-    innerStack.id = data.id + '_innerstack';
-
-    let users: TextElement[] = [];
-    data.users?.forEach(user => {
-        let text: TextElement = new TextElement();
-        text.content = user.name || '';
-        text.style.color = 'black';
-        text.style.bold = true;
-        text.style.strokeColor = 'none';
-        text.horizontalAlignment = 'Left';
-        text.style.fill = 'none';
-        text.id = data.id + '_text';
-        text.style.textWrapping = 'Wrap';
-        users.push(text);
-    });
-
-    innerStack.children = users;
-    content.children = [roleName, innerStack];
-
-    return content;
-}
-
-}

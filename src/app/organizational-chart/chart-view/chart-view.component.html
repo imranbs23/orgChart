@@ -1,23 +1,33 @@
-<ejs-diagram
-  #diagram
-  id="diagram"
-  width="100%"
-  height="700px"
-  [getConnectorDefaults]="connectorDefaults"
-  [getNodeDefaults]="nodeDefaults"
-  [layout]="layout"
-  [dataSourceSettings]="dataSourceSettings"
-  [snapSettings]="snapSettings"
-  [tool]="tools"
->
-</ejs-diagram>
-<ng-template #nodeTemplate let-data >
-  <ng-container>
-      <div>
-            <h1>{{data.data.name}}</h1>
-            <div *ngFor="let user of data.data.users">
-              {{ user.name }}
-            </div>
-        </div>
-  </ng-container>
-  </ng-template>
+          <ejs-diagram
+            #diagram
+            id="diagram"
+            width="100%"
+            height="700px"
+            [getConnectorDefaults]='connectorDefaults'
+            [getNodeDefaults]='nodeDefaults'
+            [layout]='layout'
+            [dataSourceSettings]='dataSourceSettings'
+            [snapSettings]='snapSettings'
+            [tool]='tool'
+            [constraints]="diagramConstraints"
+            (selectionChange)="selectionChange($event)"
+            (created)="created()">
+              <ng-template #nodeTemplate let-data >
+                <ng-container>
+                  <div style="border: 3px solid;">
+                    <div>
+                      <div class="justify-content">
+                        <span>{{data.data.name}}</span>
+                        <span>({{data.data.users?.length}})</span>
+                        <span (click)="toggleExpand(data.data)">{{ data.data.expanded ? 'hide' : 'show' }}</span>
+                      </div>
+                      <div *ngIf="data.data.expanded">
+                        <div *ngFor="let user of data.data.users">
+                          {{user.name}}
+                        </div>
+                      </div>
+                  </div>
+                </div>
+              </ng-container>
+                  </ng-template>
+          </ejs-diagram>
