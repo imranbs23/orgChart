@@ -1,0 +1,21 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+}
+
+.component-right {
+  background-color:  #e0e0eb;
+  flex-basis: 70%;
+}
+
+.component-left {
+  background-color:  #c2d6d6;
+  flex-basis: 30%;
+}

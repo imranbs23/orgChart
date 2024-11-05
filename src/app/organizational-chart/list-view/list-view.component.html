@@ -1,0 +1,25 @@
+<ejs-treeview
+  id='treeelement'
+  #treevalidate
+  [fields]='field'
+  allowEditing="true"
+  allowDragAndDrop="true"
+  allowMultiSelection="true"
+  [nodeTemplate]="nodeTemplate"
+  (nodeClicked)='nodeclicked($event)'
+  (nodeEditing)="onNodeEditing($event)">
+</ejs-treeview>
+
+<ejs-contextmenu
+  id="contentmenutree"
+  #contentmenutree
+  target='#treeelement'
+  [items]="menuItems"
+  (beforeOpen)="beforeopen($event)"
+  (select)="menuclick($event)">
+</ejs-contextmenu>
+
+<ng-template #nodeTemplate let-data>
+  <div *ngIf="data.isRole" style="border: 1px solid red;">{{ data.name }}</div>
+  <div *ngIf="!data.isRole" style="border: 1px solid blue;">{{ data.name }}</div>
+</ng-template>

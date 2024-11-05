@@ -1,0 +1,52 @@
+.node-template {
+  padding: 8px;
+  border-radius: 4px;
+  min-width: 150px;
+}
+
+.role-node {
+  background-color: CornflowerBlue;
+  color: white;
+}
+
+.user-node {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.node-title {
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.node-users {
+  font-size: 0.9em;
+  padding-top: 4px;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.user-item {
+  padding: 2px 0;
+}
+::ng-deep .node-header {
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+::ng-deep .node-content {
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  margin-top: 8px;
+  padding-top: 8px;
+}
+
+::ng-deep .user-item {
+  padding: 4px 0;
+  font-size: 0.9em;
+}
+
+::ng-deep .e-diagram-tooltip-content {
+  background: white;
+  padding: 8px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}

@@ -1,0 +1,23 @@
+<ejs-diagram
+  #diagram
+  id="diagram"
+  width="100%"
+  height="700px"
+  [getConnectorDefaults]="connectorDefaults"
+  [getNodeDefaults]="nodeDefaults"
+  [layout]="layout"
+  [dataSourceSettings]="dataSourceSettings"
+  [snapSettings]="snapSettings"
+  [tool]="tools"
+>
+</ejs-diagram>
+<ng-template #nodeTemplate let-data >
+  <ng-container>
+      <div>
+            <h1>{{data.data.name}}</h1>
+            <div *ngFor="let user of data.data.users">
+              {{ user.name }}
+            </div>
+        </div>
+  </ng-container>
+  </ng-template>

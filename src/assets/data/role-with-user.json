@@ -1,0 +1,747 @@
+[
+  {
+    "id": "dbfbf71f-9152-4b92-a781-d6d403ed51ac",
+    "name": "Role",
+    "category": "Project",
+    "project": {
+      "id": "146f2c73-3d99-43d7-8e4d-6c8b55bae11d",
+      "name": "base project"
+    },
+    "users": [
+      {
+        "id": "user|9dded2c0-015c-4073-9a24-9a4e5a6a36ad",
+        "name": "Other User (No access)"
+      },
+      {
+        "id": "user|90e8bf28-5b02-4a13-b0e3-7d47b755813a",
+        "name": "Ottar Henanger"
+      },
+      {
+        "id": "user|5c7f8434-b8ac-4969-af37-53ac10e4257b",
+        "name": "Ottar Henanger"
+      }
+    ],
+    "tenantId": "da640c23-4ba6-4f43-b140-b68ce4831cc3",
+    "scope": "Informatiq.Plan",
+    "created": "2024-11-01T05:45:25.2944314Z",
+    "createdBy": {
+      "id": "user|2504dd84-669e-434f-a85e-e6b84fb4d588",
+      "name": "Md. Imran Hossain"
+    },
+    "lastModified": "2024-11-01T05:45:43.232073Z",
+    "lastModifiedBy": {
+      "id": "user|2504dd84-669e-434f-a85e-e6b84fb4d588",
+      "name": "Md. Imran Hossain"
+    },
+    "_etag": "\"63018eab-0000-0d00-0000-67246b070000\""
+  },
+  {
+    "id": "2abf37f9-6522-408e-ab7d-0d06415690e1",
+    "name": "Role 01",
+    "category": "Project",
+    "project": {
+      "id": "146f2c73-3d99-43d7-8e4d-6c8b55bae11d",
+      "name": "base project"
+    },
+    "users": [
+      {
+        "id": "user|3553cf05-1a3f-4976-b074-76f639dd6a62",
+        "name": "Abdullah Al Zaied"
+      },
+      {
+        "id": "user|a9b906d4-f23a-4ced-bd37-cf4bc27893f5",
+        "name": "Abdullah Fahad"
+      },
+      {
+        "id": "user|45c0a706-6b2b-44a0-81f0-f1014177fdf4",
+        "name": "Abhishek Halkurki"
+      }
+    ],
+    "tenantId": "da640c23-4ba6-4f43-b140-b68ce4831cc3",
+    "scope": "Informatiq.Plan",
+    "created": "2024-10-30T14:16:27.6439409Z",
+    "createdBy": {
+      "id": "user|2504dd84-669e-434f-a85e-e6b84fb4d588",
+      "name": "Md. Imran Hossain"
+    },
+    "lastModified": "2024-10-30T14:20:03.268234Z",
+    "lastModifiedBy": {
+      "id": "user|2504dd84-669e-434f-a85e-e6b84fb4d588",
+      "name": "Md. Imran Hossain"
+    },
+    "_etag": "\"1301cf05-0000-0d00-0000-672240930000\"",
+    "selectedUsers": [
+      {
+        "id": "user|45c0a706-6b2b-44a0-81f0-f1014177fdf4",
+        "name": "Abhishek Halkurki",
+        "email": "abhishek.halkurki@halliburton.com"
+      },
+      {
+        "id": "user|a9b906d4-f23a-4ced-bd37-cf4bc27893f5",
+        "name": "Abdullah Fahad",
+        "email": "abdullah.fahad@brainstation-23.com"
+      },
+      {
+        "id": "user|3553cf05-1a3f-4976-b074-76f639dd6a62",
+        "name": "Abdullah Al Zaied",
+        "email": "al.zaied@brainstation-23.com"
+      }
+    ],
+    "hasChild": true,
+    "expanded": true,
+    "pid": "dbfbf71f-9152-4b92-a781-d6d403ed51ac"
+  },
+  {
+    "id": "fe1e87fb-8f28-45c0-ba63-f0d43e01cd91",
+    "name": "Role 02",
+    "category": "Project",
+    "project": {
+      "id": "146f2c73-3d99-43d7-8e4d-6c8b55bae11d",
+      "name": "base project"
+    },
+    "users": [
+      {
+        "id": "user|75bdb37b-ac50-488d-a458-621b9c7ac403",
+        "name": "Erlend Søreide"
+      },
+      {
+        "id": "user|21d8d31c-07ce-43a1-a884-4c7f9ef3d471",
+        "name": "Erlend Søreide"
+      },
+      {
+        "id": "user|b25d2bc0-a067-4575-8f3f-3b3a4747ba47",
+        "name": "Erlend Søreide (AkerBP)"
+      }
+    ],
+    "tenantId": "da640c23-4ba6-4f43-b140-b68ce4831cc3",
+    "scope": "Informatiq.Plan",
+    "created": "2024-10-30T14:16:34.6386052Z",
+    "createdBy": {
+      "id": "user|2504dd84-669e-434f-a85e-e6b84fb4d588",
+      "name": "Md. Imran Hossain"
+    },
+    "lastModified": "2024-10-30T14:21:44.7377409Z",
+    "lastModifiedBy": {
+      "id": "user|2504dd84-669e-434f-a85e-e6b84fb4d588",
+      "name": "Md. Imran Hossain"
+    },
+    "_etag": "\"13016b1d-0000-0d00-0000-672240f80000\"",
+    "selectedUsers": [
+      {
+        "id": "user|75bdb37b-ac50-488d-a458-621b9c7ac403",
+        "name": "Erlend Søreide",
+        "email": "erlend.demo@gmail.com"
+      },
+      {
+        "id": "user|b25d2bc0-a067-4575-8f3f-3b3a4747ba47",
+        "name": "Erlend Søreide (AkerBP)",
+        "email": "erlend.akerbp@gmail.com"
+      },
+      {
+        "id": "user|21d8d31c-07ce-43a1-a884-4c7f9ef3d471",
+        "name": "Erlend Søreide",
+        "email": "es@informatiq.no"
+      }
+    ],
+    "hasChild": true,
+    "pid": "dbfbf71f-9152-4b92-a781-d6d403ed51ac"
+  },
+  {
+    "id": "83b2fbc5-9a8a-48d5-9221-55f3a828fec9",
+    "name": "Role 03",
+    "category": "Project",
+    "project": {
+      "id": "146f2c73-3d99-43d7-8e4d-6c8b55bae11d",
+      "name": "base project"
+    },
+    "users": [
+      {
+        "id": "user|974f95aa-e412-4808-b973-c0bbed029ad7",
+        "name": "Madhav Roman"
+      },
+      {
+        "id": "user|67c665ad-698c-4068-9628-5b88a011f6d8",
+        "name": "Mash Burnded"
+      },
+      {
+        "id": "user|2de30db4-adf4-4dda-9a50-989f5eec22d2",
+        "name": "Md. Al-Amin"
+      }
+    ],
+    "tenantId": "da640c23-4ba6-4f43-b140-b68ce4831cc3",
+    "scope": "Informatiq.Plan",
+    "created": "2024-10-30T14:16:40.4482211Z",
+    "createdBy": {
+      "id": "user|2504dd84-669e-434f-a85e-e6b84fb4d588",
+      "name": "Md. Imran Hossain"
+    },
+    "lastModified": "2024-10-30T14:22:35.269776Z",
+    "lastModifiedBy": {
+      "id": "user|2504dd84-669e-434f-a85e-e6b84fb4d588",
+      "name": "Md. Imran Hossain"
+    },
+    "_etag": "\"13019e29-0000-0d00-0000-6722412b0000\"",
+    "selectedUsers": [
+      {
+        "id": "user|2de30db4-adf4-4dda-9a50-989f5eec22d2",
+        "name": "Md. Al-Amin",
+        "email": "md.al-amin@brainstation-23.com"
+      },
+      {
+        "id": "user|974f95aa-e412-4808-b973-c0bbed029ad7",
+        "name": "Madhav Roman",
+        "email": "madhav@gmail.com"
+      },
+      {
+        "id": "user|67c665ad-698c-4068-9628-5b88a011f6d8",
+        "name": "Mash Burnded",
+        "email": "sanjit.cse.2@gmail.com"
+      }
+    ],
+    "hasChild": true,
+    "pid": "dbfbf71f-9152-4b92-a781-d6d403ed51ac"
+  },
+  {
+    "id": "65a8d989-e97b-4703-93f0-f1e016ea0d9c",
+    "name": "Role 01_01",
+    "category": "Project",
+    "project": {
+      "id": "146f2c73-3d99-43d7-8e4d-6c8b55bae11d",
+      "name": "base project"
+    },
+    "users": [
+      {
+        "id": "user|91355e32-1fb2-404c-8553-73cd896dc866",
+        "name": "Anders Langøy"
+      },
+      {
+        "id": "user|95c751ae-383f-49d6-bbb1-8011933715ec",
+        "name": "andersappdev@informatiq.no"
+      },
+      {
+        "id": "user|3e5587a8-6b2f-4b7f-b370-61c8c46e24a9",
+        "name": "Andre Nilsen"
+      }
+    ],
+    "tenantId": "da640c23-4ba6-4f43-b140-b68ce4831cc3",
+    "scope": "Informatiq.Plan",
+    "created": "2024-10-30T14:16:47.0588012Z",
+    "createdBy": {
+      "id": "user|2504dd84-669e-434f-a85e-e6b84fb4d588",
+      "name": "Md. Imran Hossain"
+    },
+    "lastModified": "2024-10-30T14:20:14.1865772Z",
+    "lastModifiedBy": {
+      "id": "user|2504dd84-669e-434f-a85e-e6b84fb4d588",
+      "name": "Md. Imran Hossain"
+    },
+    "_etag": "\"1301a808-0000-0d00-0000-6722409e0000\"",
+    "selectedUsers": [
+      {
+        "id": "user|95c751ae-383f-49d6-bbb1-8011933715ec",
+        "name": "andersappdev@informatiq.no",
+        "email": "andersappdev@informatiq.no"
+      },
+      {
+        "id": "user|3e5587a8-6b2f-4b7f-b370-61c8c46e24a9",
+        "name": "Andre Nilsen",
+        "email": "vinefin@gmail.com"
+      },
+      {
+        "id": "user|91355e32-1fb2-404c-8553-73cd896dc866",
+        "name": "Anders Langøy",
+        "email": "al@informatiq.no"
+      }
+    ],
+    "pid": "2abf37f9-6522-408e-ab7d-0d06415690e1"
+  },
+  {
+    "id": "e0a25ef0-7ef9-4056-b83d-e4fbc56c3d66",
+    "name": "Role 01_02",
+    "category": "Project",
+    "project": {
+      "id": "146f2c73-3d99-43d7-8e4d-6c8b55bae11d",
+      "name": "base project"
+    },
+    "users": [
+      {
+        "id": "user|33c983ef-0a19-451c-b5d1-802b273f30f2",
+        "name": "André Nilsen"
+      },
+      {
+        "id": "user|1c28ae75-5363-4947-b5f1-c497a71fa4b9",
+        "name": "Anish Jose"
+      },
+      {
+        "id": "user|dc48776a-e93a-4d07-a13b-58388d923f08",
+        "name": "Arafath Hossen Santo"
+      }
+    ],
+    "tenantId": "da640c23-4ba6-4f43-b140-b68ce4831cc3",
+    "scope": "Informatiq.Plan",
+    "created": "2024-10-30T14:17:03.1544847Z",
+    "createdBy": {
+      "id": "user|2504dd84-669e-434f-a85e-e6b84fb4d588",
+      "name": "Md. Imran Hossain"
+    },
+    "lastModified": "2024-10-30T14:20:37.655297Z",
+    "lastModifiedBy": {
+      "id": "user|2504dd84-669e-434f-a85e-e6b84fb4d588",
+      "name": "Md. Imran Hossain"
+    },
+    "_etag": "\"13013f0e-0000-0d00-0000-672240b50000\"",
+    "selectedUsers": [
+      {
+        "id": "user|33c983ef-0a19-451c-b5d1-802b273f30f2",
+        "name": "André Nilsen",
+        "email": "an@informatiq.no"
+      },
+      {
+        "id": "user|1c28ae75-5363-4947-b5f1-c497a71fa4b9",
+        "name": "Anish Jose",
+        "email": "aj@informatiq.no"
+      },
+      {
+        "id": "user|dc48776a-e93a-4d07-a13b-58388d923f08",
+        "name": "Arafath Hossen Santo",
+        "email": "arafath.santo@brainstation-23.com"
+      }
+    ],
+    "pid": "2abf37f9-6522-408e-ab7d-0d06415690e1",
+    "hasChild": true
+  },
+  {
+    "id": "2e60cee1-c2f7-4b38-a129-178b91a98f38",
+    "name": "Role 01_03",
+    "category": "Project",
+    "project": {
+      "id": "146f2c73-3d99-43d7-8e4d-6c8b55bae11d",
+      "name": "base project"
+    },
+    "users": [
+      {
+        "id": "user|39b72bd8-7094-4a66-b2d8-a298e0bb429b",
+        "name": "Cory Anderson"
+      },
+      {
+        "id": "user|6d0d46d3-1606-4939-b82f-8f8079e3de57",
+        "name": "Daria Grigoriuk"
+      },
+      {
+        "id": "user|7420b326-f71b-489c-8626-c6c98b284305",
+        "name": "DDP User"
+      }
+    ],
+    "tenantId": "da640c23-4ba6-4f43-b140-b68ce4831cc3",
+    "scope": "Informatiq.Plan",
+    "created": "2024-10-30T14:17:21.4910425Z",
+    "createdBy": {
+      "id": "user|2504dd84-669e-434f-a85e-e6b84fb4d588",
+      "name": "Md. Imran Hossain"
+    },
+    "lastModified": "2024-10-30T14:21:33.2769356Z",
+    "lastModifiedBy": {
+      "id": "user|2504dd84-669e-434f-a85e-e6b84fb4d588",
+      "name": "Md. Imran Hossain"
+    },
+    "_etag": "\"1301681a-0000-0d00-0000-672240ed0000\"",
+    "selectedUsers": [
+      {
+        "id": "user|6d0d46d3-1606-4939-b82f-8f8079e3de57",
+        "name": "Daria Grigoriuk",
+        "email": "daria@informatiq.no"
+      },
+      {
+        "id": "user|7420b326-f71b-489c-8626-c6c98b284305",
+        "name": "DDP User",
+        "email": "ddp-user@informatiq.no"
+      },
+      {
+        "id": "user|39b72bd8-7094-4a66-b2d8-a298e0bb429b",
+        "name": "Cory Anderson",
+        "email": "cory@gmail.com"
+      }
+    ],
+    "pid": "2abf37f9-6522-408e-ab7d-0d06415690e1"
+  },
+  {
+    "id": "18236c7f-ef67-4815-b7d7-a70aba83a4bb",
+    "name": "Role 02_01",
+    "category": "Project",
+    "project": {
+      "id": "146f2c73-3d99-43d7-8e4d-6c8b55bae11d",
+      "name": "base project"
+    },
+    "users": [
+      {
+        "id": "user|b140b6ee-a809-473e-bd78-c8658397c5e6",
+        "name": "Fabian Schnuer"
+      },
+      {
+        "id": "user|cc68464b-0902-44fa-b795-68ea98310576",
+        "name": "geologiq@mentalfish.com"
+      },
+      {
+        "id": "user|9cfa9f45-ef84-4613-bda7-469d70c4c916",
+        "name": "Hakim Amea"
+      }
+    ],
+    "tenantId": "da640c23-4ba6-4f43-b140-b68ce4831cc3",
+    "scope": "Informatiq.Plan",
+    "created": "2024-10-30T14:17:42.3288633Z",
+    "createdBy": {
+      "id": "user|2504dd84-669e-434f-a85e-e6b84fb4d588",
+      "name": "Md. Imran Hossain"
+    },
+    "lastModified": "2024-10-30T14:22:04.1054261Z",
+    "lastModifiedBy": {
+      "id": "user|2504dd84-669e-434f-a85e-e6b84fb4d588",
+      "name": "Md. Imran Hossain"
+    },
+    "_etag": "\"13012e22-0000-0d00-0000-6722410c0000\"",
+    "selectedUsers": [
+      {
+        "id": "user|cc68464b-0902-44fa-b795-68ea98310576",
+        "name": "geologiq@mentalfish.com",
+        "email": "geologiq@mentalfish.com"
+      },
+      {
+        "id": "user|b140b6ee-a809-473e-bd78-c8658397c5e6",
+        "name": "Fabian Schnuer",
+        "email": "fabian@gohde.no"
+      },
+      {
+        "id": "user|9cfa9f45-ef84-4613-bda7-469d70c4c916",
+        "name": "Hakim Amea",
+        "email": "hakim@gmail.com"
+      }
+    ],
+    "pid": "fe1e87fb-8f28-45c0-ba63-f0d43e01cd91"
+  },
+  {
+    "id": "476401e6-fc7a-439b-b1fe-c2744a263ad2",
+    "name": "Role 02_02",
+    "category": "Project",
+    "project": {
+      "id": "146f2c73-3d99-43d7-8e4d-6c8b55bae11d",
+      "name": "base project"
+    },
+    "users": [
+      {
+        "id": "user|3cb13cec-3ad0-4b10-af38-605029ef0b67",
+        "name": "Hanidur Rhaman"
+      },
+      {
+        "id": "user|590d087a-b057-4f11-9290-8d44556ca87b",
+        "name": "Hasan Ahmed"
+      },
+      {
+        "id": "user|7ff7d9a8-c8d1-4c2d-9893-12c8d80c1560",
+        "name": "Imran Hossain"
+      }
+    ],
+    "tenantId": "da640c23-4ba6-4f43-b140-b68ce4831cc3",
+    "scope": "Informatiq.Plan",
+    "created": "2024-10-30T14:17:52.1657956Z",
+    "createdBy": {
+      "id": "user|2504dd84-669e-434f-a85e-e6b84fb4d588",
+      "name": "Md. Imran Hossain"
+    },
+    "lastModified": "2024-10-30T14:22:14.7538597Z",
+    "lastModifiedBy": {
+      "id": "user|2504dd84-669e-434f-a85e-e6b84fb4d588",
+      "name": "Md. Imran Hossain"
+    },
+    "_etag": "\"1301a824-0000-0d00-0000-672241160000\"",
+    "selectedUsers": [
+      {
+        "id": "user|3cb13cec-3ad0-4b10-af38-605029ef0b67",
+        "name": "Hanidur Rhaman",
+        "email": "hamidur.rhaman@brainstation-23.com"
+      },
+      {
+        "id": "user|590d087a-b057-4f11-9290-8d44556ca87b",
+        "name": "Hasan Ahmed",
+        "email": "hasan.ahmed@brainstation-23.com"
+      },
+      {
+        "id": "user|7ff7d9a8-c8d1-4c2d-9893-12c8d80c1560",
+        "name": "Imran Hossain",
+        "email": "mihemu5@gmail.com"
+      }
+    ],
+    "pid": "fe1e87fb-8f28-45c0-ba63-f0d43e01cd91"
+  },
+  {
+    "id": "de195b9c-e6f4-43d4-aa48-6bb0bad94599",
+    "name": "Role 03_01",
+    "category": "Project",
+    "project": {
+      "id": "146f2c73-3d99-43d7-8e4d-6c8b55bae11d",
+      "name": "base project"
+    },
+    "users": [
+      {
+        "id": "user|2de30db4-adf4-4dda-9a50-989f5eec22d2",
+        "name": "Md. Al-Amin"
+      },
+      {
+        "id": "user|2504dd84-669e-434f-a85e-e6b84fb4d588",
+        "name": "Md. Imran Hossain"
+      },
+      {
+        "id": "user|60952c58-353d-43b3-903f-d8d320a378d7",
+        "name": "Mehedi Hasan"
+      }
+    ],
+    "tenantId": "da640c23-4ba6-4f43-b140-b68ce4831cc3",
+    "scope": "Informatiq.Plan",
+    "created": "2024-10-30T14:17:58.8932035Z",
+    "createdBy": {
+      "id": "user|2504dd84-669e-434f-a85e-e6b84fb4d588",
+      "name": "Md. Imran Hossain"
+    },
+    "lastModified": "2024-10-30T14:23:10.1273382Z",
+    "lastModifiedBy": {
+      "id": "user|2504dd84-669e-434f-a85e-e6b84fb4d588",
+      "name": "Md. Imran Hossain"
+    },
+    "_etag": "\"1301fa31-0000-0d00-0000-6722414e0000\"",
+    "selectedUsers": [
+      {
+        "id": "user|60952c58-353d-43b3-903f-d8d320a378d7",
+        "name": "Mehedi Hasan",
+        "email": "mehedi.hasan23@brainstation-23.com"
+      },
+      {
+        "id": "user|2de30db4-adf4-4dda-9a50-989f5eec22d2",
+        "name": "Md. Al-Amin",
+        "email": "md.al-amin@brainstation-23.com"
+      },
+      {
+        "id": "user|2504dd84-669e-434f-a85e-e6b84fb4d588",
+        "name": "Md. Imran Hossain",
+        "email": "imran@brainstation-23.com"
+      }
+    ],
+    "pid": "83b2fbc5-9a8a-48d5-9221-55f3a828fec9",
+    "hasChild": true
+  },
+  {
+    "id": "878aaecc-1306-4c18-92d0-283e441f7010",
+    "name": "Role 01_02_01",
+    "category": "Project",
+    "project": {
+      "id": "146f2c73-3d99-43d7-8e4d-6c8b55bae11d",
+      "name": "base project"
+    },
+    "users": [
+      {
+        "id": "user|a604a920-fb98-4756-83fa-3fe00101c4bc",
+        "name": "Asif Jubair"
+      },
+      {
+        "id": "user|b51c0f6e-15d8-4692-9377-0716fce2f686",
+        "name": "Bayzed Meer"
+      },
+      {
+        "id": "user|9c03da94-d967-4bf9-9bf9-d56065f936ce",
+        "name": "Christian Elle"
+      }
+    ],
+    "tenantId": "da640c23-4ba6-4f43-b140-b68ce4831cc3",
+    "scope": "Informatiq.Plan",
+    "created": "2024-10-30T14:18:29.9502801Z",
+    "createdBy": {
+      "id": "user|2504dd84-669e-434f-a85e-e6b84fb4d588",
+      "name": "Md. Imran Hossain"
+    },
+    "lastModified": "2024-10-30T14:20:50.683652Z",
+    "lastModifiedBy": {
+      "id": "user|2504dd84-669e-434f-a85e-e6b84fb4d588",
+      "name": "Md. Imran Hossain"
+    },
+    "_etag": "\"13010311-0000-0d00-0000-672240c20000\"",
+    "selectedUsers": [
+      {
+        "id": "user|a604a920-fb98-4756-83fa-3fe00101c4bc",
+        "name": "Asif Jubair",
+        "email": "asif.jubair@brainstation-23.com"
+      },
+      {
+        "id": "user|9c03da94-d967-4bf9-9bf9-d56065f936ce",
+        "name": "Christian Elle",
+        "email": "cedevabp@informatiq.no"
+      },
+      {
+        "id": "user|b51c0f6e-15d8-4692-9377-0716fce2f686",
+        "name": "Bayzed Meer",
+        "email": "bayzed.meer@brainstation-23.com"
+      }
+    ],
+    "pid": "e0a25ef0-7ef9-4056-b83d-e4fbc56c3d66"
+  },
+  {
+    "id": "52f2e58d-d231-4f7d-abd1-2208172cbcb7",
+    "name": "Role 01_02_02",
+    "category": "Project",
+    "project": {
+      "id": "146f2c73-3d99-43d7-8e4d-6c8b55bae11d",
+      "name": "base project"
+    },
+    "users": [
+      {
+        "id": "user|bdb33af4-ef07-428a-9832-1da01b9d90d4",
+        "name": "Christian Elle"
+      },
+      {
+        "id": "user|29c59b7f-dbf1-43f3-a7c2-d9822e50db03",
+        "name": "Christian Elle"
+      },
+      {
+        "id": "user|0ba80422-21c7-49f0-8c2c-09006ee304bc",
+        "name": "Christian Test"
+      }
+    ],
+    "tenantId": "da640c23-4ba6-4f43-b140-b68ce4831cc3",
+    "scope": "Informatiq.Plan",
+    "created": "2024-10-30T14:18:38.2730404Z",
+    "createdBy": {
+      "id": "user|2504dd84-669e-434f-a85e-e6b84fb4d588",
+      "name": "Md. Imran Hossain"
+    },
+    "lastModified": "2024-10-30T14:21:24.3921221Z",
+    "lastModifiedBy": {
+      "id": "user|2504dd84-669e-434f-a85e-e6b84fb4d588",
+      "name": "Md. Imran Hossain"
+    },
+    "_etag": "\"13013318-0000-0d00-0000-672240e40000\"",
+    "selectedUsers": [
+      {
+        "id": "user|0ba80422-21c7-49f0-8c2c-09006ee304bc",
+        "name": "Christian Test",
+        "email": "christiantest@informatiq.no"
+      },
+      {
+        "id": "user|bdb33af4-ef07-428a-9832-1da01b9d90d4",
+        "name": "Christian Elle",
+        "email": "ce@informatiq.no"
+      },
+      {
+        "id": "user|29c59b7f-dbf1-43f3-a7c2-d9822e50db03",
+        "name": "Christian Elle",
+        "email": "christian.elle@akerbp.com"
+      }
+    ],
+    "pid": "e0a25ef0-7ef9-4056-b83d-e4fbc56c3d66"
+  },
+  {
+    "id": "ef7e1ed0-f3d3-4753-bc06-7d2236d2f6f4",
+    "name": "Role 03_01_01",
+    "category": "Project",
+    "project": {
+      "id": "146f2c73-3d99-43d7-8e4d-6c8b55bae11d",
+      "name": "base project"
+    },
+    "users": [
+      {
+        "id": "user|c51bab8c-ea3c-4f92-b6a1-c282544f8158",
+        "name": "Muhammad Ramzan"
+      },
+      {
+        "id": "user|af2aff01-8ef5-44f6-bc13-a04c184816a3",
+        "name": "Nadia Zaman"
+      },
+      {
+        "id": "user|8614026a-6821-47c6-8e37-92d99942ee7d",
+        "name": "Natcha Uthaug"
+      }
+    ],
+    "tenantId": "da640c23-4ba6-4f43-b140-b68ce4831cc3",
+    "scope": "Informatiq.Plan",
+    "created": "2024-10-30T14:19:10.7868889Z",
+    "createdBy": {
+      "id": "user|2504dd84-669e-434f-a85e-e6b84fb4d588",
+      "name": "Md. Imran Hossain"
+    },
+    "lastModified": "2024-10-30T14:23:18.5710632Z",
+    "lastModifiedBy": {
+      "id": "user|2504dd84-669e-434f-a85e-e6b84fb4d588",
+      "name": "Md. Imran Hossain"
+    },
+    "_etag": "\"13014734-0000-0d00-0000-672241560000\"",
+    "selectedUsers": [
+      {
+        "id": "user|c51bab8c-ea3c-4f92-b6a1-c282544f8158",
+        "name": "Muhammad Ramzan",
+        "email": "muhammad.ramzan@brainstation23.com"
+      },
+      {
+        "id": "user|af2aff01-8ef5-44f6-bc13-a04c184816a3",
+        "name": "Nadia Zaman",
+        "email": "nadia.zaman@brainstation-23.com"
+      },
+      {
+        "id": "user|8614026a-6821-47c6-8e37-92d99942ee7d",
+        "name": "Natcha Uthaug",
+        "email": "nu@informatiq.no"
+      }
+    ],
+    "pid": "de195b9c-e6f4-43d4-aa48-6bb0bad94599",
+    "hasChild": true
+  },
+  {
+    "id": "1642ce5e-f830-4223-8703-af408e8dacb5",
+    "name": "Role 03_01_01_01",
+    "category": "Project",
+    "project": {
+      "id": "146f2c73-3d99-43d7-8e4d-6c8b55bae11d",
+      "name": "base project"
+    },
+    "users": [
+      {
+        "id": "user|b9c9d832-e264-43d1-b088-401afe7e18d2",
+        "name": "New Add"
+      },
+      {
+        "id": "user|938bccb2-7b7d-4a25-9cb6-815067c9d886",
+        "name": "newaz hossain"
+      },
+      {
+        "id": "user|308d3cfa-a72a-4591-a937-58858538e0a4",
+        "name": "Orest Urban"
+      }
+    ],
+    "tenantId": "da640c23-4ba6-4f43-b140-b68ce4831cc3",
+    "scope": "Informatiq.Plan",
+    "created": "2024-10-30T14:19:44.5460519Z",
+    "createdBy": {
+      "id": "user|2504dd84-669e-434f-a85e-e6b84fb4d588",
+      "name": "Md. Imran Hossain"
+    },
+    "lastModified": "2024-10-30T14:23:41.5521381Z",
+    "lastModifiedBy": {
+      "id": "user|2504dd84-669e-434f-a85e-e6b84fb4d588",
+      "name": "Md. Imran Hossain"
+    },
+    "_etag": "\"1301ba39-0000-0d00-0000-6722416d0000\"",
+    "selectedUsers": [
+      {
+        "id": "user|938bccb2-7b7d-4a25-9cb6-815067c9d886",
+        "name": "newaz hossain",
+        "email": "newaz.hossain@brainstation-23.com"
+      },
+      {
+        "id": "user|308d3cfa-a72a-4591-a937-58858538e0a4",
+        "name": "Orest Urban",
+        "email": "orest@linkupst.com"
+      },
+      {
+        "id": "user|b9c9d832-e264-43d1-b088-401afe7e18d2",
+        "name": "New Add",
+        "email": "newwellbookuser02@yopmail.com"
+      }
+    ],
+    "pid": "ef7e1ed0-f3d3-4753-bc06-7d2236d2f6f4"
+  }
+]
