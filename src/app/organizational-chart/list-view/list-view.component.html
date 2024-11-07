@@ -1,3 +1,11 @@
+<div style="display: flex; align-items: center; margin-bottom: 10px;">
+  <button (click)="addRole()">Add Role</button>
+  <button (click)="addUser()">Add User</button>
+  <label style="margin-left: 10px;">
+    <input type="checkbox" [(ngModel)]="showUsers" (ngModelChange)="onToggleUsers($event)" /> Show User
+  </label>
+</div>
+
 <ejs-treeview
   id='treeelement'
   #treevalidate
@@ -7,7 +15,9 @@
   allowMultiSelection="true"
   [nodeTemplate]="nodeTemplate"
   (nodeClicked)='nodeclicked($event)'
-  (nodeEditing)="onNodeEditing($event)">
+  (nodeEditing)="onNodeEditing($event)"
+  (nodeEdited)="onNodeEdited($event)"
+  >
 </ejs-treeview>
 
 <ejs-contextmenu
@@ -21,5 +31,5 @@
 
 <ng-template #nodeTemplate let-data>
   <div *ngIf="data.isRole" style="border: 1px solid red;">{{ data.name }}</div>
-  <div *ngIf="!data.isRole" style="border: 1px solid blue;">{{ data.name }}</div>
+  <div *ngIf="!data.isRole && !data.hidden" style="border: 1px solid blue;">{{ data.name }}</div>
 </ng-template>

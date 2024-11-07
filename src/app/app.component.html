@@ -1,9 +1,12 @@
 <router-outlet />
 <div class="container">
   <div class="component-left">
-    <app-list-view></app-list-view>
+    <app-list-view
+    (actionComplete)="onActionComplete($event)"></app-list-view>
   </div>
   <div class="component-right">
-    <app-chart-view></app-chart-view>
+    <app-chart-view
+    [listData]= "listData$ |async"
+    ></app-chart-view>
   </div>
 </div>

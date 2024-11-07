@@ -19,11 +19,11 @@
                       <div class="justify-content">
                         <span>{{data.data.name}}</span>
                         <span>({{data.data.users?.length}})</span>
-                        <span (click)="toggleExpand(data.data)">{{ data.data.expanded ? 'hide' : 'show' }}</span>
+                        <span (click)="data.data.expanded = !data.data.expanded;">{{ data.data.expanded ? 'hide' : 'show' }}</span>
                       </div>
                       <div *ngIf="data.data.expanded">
                         <div *ngFor="let user of data.data.users">
-                          {{user.name}}
+                          <span *ngIf="!user.hidden">{{user.name}}</span>
                         </div>
                       </div>
                   </div>
