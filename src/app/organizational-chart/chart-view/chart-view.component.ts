@@ -66,7 +66,7 @@ export class ChartViewComponent
   public nodeDefaults(node: NodeModel): NodeModel
   {
     node.shape = { type: 'HTML' };;
-    node.width = 150;
+    node.width = 160;
     node.height = 70;
     node.style = { strokeWidth: 1, strokeColor: 'whitesmoke', fill: 'CornflowerBlue' };
     node.annotations = [{ content: (node.data as any).name, style: { color: 'white' } }];
@@ -197,7 +197,7 @@ export class ChartViewComponent
         ? { ...r, hidden: !data.showData, users: r.users?.map(u => ({ ...u, hidden: !data.showData })) }
         : r
     );
-    
+
     this.updateDataSource(originalData);
   }
 

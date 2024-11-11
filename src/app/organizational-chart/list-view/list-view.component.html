@@ -1,9 +1,16 @@
-<div style="display: flex; align-items: center; margin-bottom: 10px;">
-  <button (click)="addRole()">Add Role</button>
-  <button (click)="addUser()">Add User</button>
-  <label style="margin-left: 10px;">
-    <input type="checkbox" [(ngModel)]="showUsers" (ngModelChange)="onToggleUsers($event)" /> Show User
-  </label>
+<div class="button-container">
+  <button class="icon-button" (click)="addRole()">
+    <img src="assets/images/add.svg" alt="Add" class="icon">
+    <img src="assets/images/role.svg" alt="Role" class="icon">
+  </button>
+  <button class="icon-button" (click)="addUser()">
+    <img src="assets/images/add.svg" alt="Add" class="icon">
+    <img src="assets/images/user.svg" alt="Role" class="icon">
+  </button>
+  <div class="toggle-container">
+    <label class="user-toggle"> Show User </label>
+    <ejs-switch [checked]="showUsers" (change)="onToggleUsers($event)"></ejs-switch>
+  </div>
 </div>
 
 <ejs-treeview
@@ -30,6 +37,19 @@
 </ejs-contextmenu>
 
 <ng-template #nodeTemplate let-data>
-  <div *ngIf="data.isRole  && !data.hidden" style="border: 1px solid red;">{{ data.name }}</div>
-  <div *ngIf="!data.isRole && !data.hidden" style="border: 1px solid blue;">{{ data.name }}</div>
+  <div *ngIf="!data.hidden" class="node-content">
+    <span class="name">
+      <img [src]="data.isRole ? 'assets/images/role.svg' : 'assets/images/user.svg'" alt="Icon" class="icon"> {{ data.name }}
+      <span *ngIf="data.isRole" class="vertical-bar">|</span>
+      <span *ngIf="data.isRole">
+        {{ data.users?.length }} {{ data.users?.length === 1 ? 'User' : 'Users' }}
+      </span>
+    </span>
+    <div class="action-icons">
+      <img src="assets/images/add.svg" alt="Add Icon" class="icon action-icon" *ngIf="data.isRole">
+      <img src="assets/images/edit.svg" alt="Edit Icon" class="icon action-icon" *ngIf="data.isRole">
+      <img src="assets/images/delete.svg" alt="Delete Icon" class="icon action-icon">
+      <img src="assets/images/visible.svg" alt="Visible Icon" class="icon action-icon" *ngIf="data.isRole">
+    </div>
+  </div>
 </ng-template>

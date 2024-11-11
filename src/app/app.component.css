@@ -2,20 +2,24 @@ body, html {
   margin: 0;
   padding: 0;
   height: 100%;
+  background-color: #3B4958;
 }
 
 .container {
   display: flex;
   flex-direction: row;
-  height: 100vh;
+  height: 97vh;
 }
 
 .component-right {
-  background-color:  #e0e0eb;
-  flex-basis: 70%;
+  background-color:  #2B3540;
+  flex-basis: 75%;
+  height: 97vh;
 }
 
 .component-left {
-  background-color:  #c2d6d6;
-  flex-basis: 30%;
+  background-color:  #2B3540;
+  color: white;
+  flex-basis: 25%;
+  margin-right: 10px;
 }

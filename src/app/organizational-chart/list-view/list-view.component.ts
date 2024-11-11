@@ -10,11 +10,22 @@ import
   ContextMenuModule,
   NodeEditEventArgs
 } from '@syncfusion/ej2-angular-navigations'
+import { ChangeEventArgs, SwitchModule } from '@syncfusion/ej2-angular-buttons'
 import { Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
-import { ChartDataType, CONTEXT_MENU_ITEMS, ContextMenuItems, EntityRef, MOUSE_BUTTONS, OrganizationChartEvent, OrganizationChartEventArgs, OrganizationRole, ToggleItem } from '../../role';
+import {
+  ChartDataType,
+  CONTEXT_MENU_ITEMS,
+  ContextMenuItems,
+  EntityRef,
+  MOUSE_BUTTONS,
+  OrganizationChartEvent,
+  OrganizationChartEventArgs,
+  OrganizationRole,
+  ToggleItem
+} from '../../role';
 
 @Component({
   selector: 'app-list-view',
@@ -25,7 +36,8 @@ import { ChartDataType, CONTEXT_MENU_ITEMS, ContextMenuItems, EntityRef, MOUSE_B
     FormsModule,
     TreeViewModule,
     CommonModule,
-    ContextMenuModule
+    ContextMenuModule,
+    SwitchModule
   ]
 })
 export class ListViewComponent implements OnInit {
@@ -176,13 +188,13 @@ export class ListViewComponent implements OnInit {
     this.eventType = ContextMenuItems.AddUser;
   }
 
-  protected onToggleUsers(checked: boolean): void {
-    this.showUsers = checked;
-    const filteredData = checked ? this.localData : this.localData.filter(a => a.isRole);
+  protected onToggleUsers(args: ChangeEventArgs): void {
+    this.showUsers = args.checked as boolean;
+    const filteredData = args.checked as boolean ? this.localData : this.localData.filter(a => a.isRole);
     this.updateDataSource(filteredData);
 
     this.eventType = ContextMenuItems.ShowHideUsers;
-    const toogleUser: ToggleItem = { id: 'all', showData: checked };
+    const toogleUser: ToggleItem = { id: 'all', showData: args.checked as boolean };
     const userData: ChartDataType = { type: 'toggle', data: toogleUser };
     this.actionComplete.emit({ data: userData, eventType: this.eventType });
   }
@@ -260,7 +272,8 @@ export class ListViewComponent implements OnInit {
         isRole: true,
         expanded: role.pid ? false : true,
         hidden: false,
-        userHidden: false
+        userHidden: false,
+        users : role.users
       });
 
       role.users?.forEach((user: EntityRef) =>
@@ -273,7 +286,8 @@ export class ListViewComponent implements OnInit {
           expanded: false,
           isRole: false,
           hidden: false,
-          userHidden: false
+          userHidden: false,
+          users : []
         });
       });
     });

@@ -1,6 +1,44 @@
+.role-card {
+  border: 2px solid #FFFFFF29;
+  background-color: #3B4958;
+  border-radius: 5px;
+}
+
 .justify-content {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   font-size: medium;
   font-weight: bolder;
+  background-color: #343F4B;
+}
+
+.justify-content span {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  margin-right: 5px;
+}
+
+.justify-content .name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 35px;
+    width: 75px;
+}
+
+.justify-content span:nth-child(2) {
+  margin-left: auto;
+}
+
+.justify-content span:nth-child(3) {
+  margin-left: auto;
+}
+
+.user-container{
+  padding-left: 3px;
+  padding-top: 3px;;
 }
