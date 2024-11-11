@@ -15,7 +15,7 @@
               <ng-template #nodeTemplate let-data >
                 <ng-container>
                   <div style="border: 3px solid;">
-                    <div>
+                    <div  *ngIf="!data.data.hidden">
                       <div class="justify-content">
                         <span>{{data.data.name}}</span>
                         <span>({{data.data.users?.length}})</span>

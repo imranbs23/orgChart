@@ -12,13 +12,13 @@ export enum ContextMenuItems {
   CollapseRole = 'Collapse Role',
   CollapseAll = 'Collapse All',
   ShowHideUsers = 'Show/Hide Users',
-  ShowHideUser = 'Show/Hide User',
   ShowHideRole = 'Show/Hide Role',
 }
 export const CONTEXT_MENU_ITEMS = [
   { text: ContextMenuItems.AddRole },
   { text: ContextMenuItems.AddUser },
   { text: ContextMenuItems.ShowHideUsers },
+  { text: ContextMenuItems.ShowHideRole },
   { text: ContextMenuItems.RemoveRole },
   { text: ContextMenuItems.RemoveUser },
 ]
@@ -30,6 +30,7 @@ export interface OrganizationChartEventArgs {
 export interface ToggleItem{
   pid?:string;
   id: string;
+  ids?: string[];
   showData: boolean;
 }
 export type ChartDataType =

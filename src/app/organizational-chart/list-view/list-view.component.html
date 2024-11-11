@@ -30,6 +30,6 @@
 </ejs-contextmenu>
 
 <ng-template #nodeTemplate let-data>
-  <div *ngIf="data.isRole" style="border: 1px solid red;">{{ data.name }}</div>
+  <div *ngIf="data.isRole  && !data.hidden" style="border: 1px solid red;">{{ data.name }}</div>
   <div *ngIf="!data.isRole && !data.hidden" style="border: 1px solid blue;">{{ data.name }}</div>
 </ng-template>

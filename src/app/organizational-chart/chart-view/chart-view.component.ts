@@ -123,6 +123,9 @@ export class ChartViewComponent
         case ContextMenuItems.ShowHideUsers:
           this.toggleUser(listData.data.data);
           break;
+        case ContextMenuItems.ShowHideRole:
+          this.toggleRole(listData.data.data);
+          break;
         case ContextMenuItems.RemoveRole:
           this.onRemoveRole(listData.data.data);
           break;
@@ -179,6 +182,22 @@ export class ChartViewComponent
         role.users = role.users?.map(u => ({ ...u, hidden: !data.showData }));
       }
     }
+    this.updateDataSource(originalData);
+  }
+
+  private toggleRole(args: OrganizationRole | ToggleItem)
+  {
+    const data = args as ToggleItem;
+
+    const dataManager = this.dataSourceSettings.dataSource as DataManager;
+    let originalData = dataManager.dataSource.json as OrganizationRole[];
+    //originalData = originalData.map(r => ({ ...r, hidden:!data.showData, users: r.users?.map(u => ({ ...u, hidden: !data.showData })) }));
+    originalData = originalData.map(r =>
+      r.id === data.id || r.pid === data.id
+        ? { ...r, hidden: !data.showData, users: r.users?.map(u => ({ ...u, hidden: !data.showData })) }
+        : r
+    );
+    
     this.updateDataSource(originalData);
   }
 

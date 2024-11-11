@@ -142,6 +142,9 @@ export class ListViewComponent implements OnInit {
       case ContextMenuItems.ShowHideUsers:
         this.onToggleUserByMenu();
         break;
+      case ContextMenuItems.ShowHideRole:
+        this.onToggleRole();
+        break;
       case ContextMenuItems.RemoveRole:
         this.onRemoveRole();
         break;
@@ -194,6 +197,21 @@ export class ListViewComponent implements OnInit {
 
       this.eventType = ContextMenuItems.ShowHideUsers;
       const toogleUser: ToggleItem = { id: selectedNode, showData: !roleData.userHidden };
+      const userData: ChartDataType = { type: 'toggle', data: toogleUser };
+      this.actionComplete.emit({ data: userData, eventType: this.eventType });
+    }
+  }
+
+  private onToggleRole(): void {
+    const selectedNode = this.getSelectedNode();
+    const roleData = this.localData.find(a => a.id == selectedNode);
+    if (roleData) {
+      roleData.userHidden = !roleData.userHidden;
+      this.localData.filter(a => a.pid == selectedNode || a.id == selectedNode).map(a => a.hidden = roleData.userHidden);
+      this.updateDataSource(this.localData);
+
+      this.eventType = ContextMenuItems.ShowHideRole;
+      const toogleUser: ToggleItem = { id: selectedNode, showData: !roleData.userHidden, ids:[] };
       const userData: ChartDataType = { type: 'toggle', data: toogleUser };
       this.actionComplete.emit({ data: userData, eventType: this.eventType });
     }
