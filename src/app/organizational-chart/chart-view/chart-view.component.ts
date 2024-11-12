@@ -5,7 +5,7 @@ import { DataManager, DataOptions } from '@syncfusion/ej2-data';
 import { DataSourceModel, DiagramConstraints, IClickEventArgs, ISelectionChangeEventArgs, LayoutModel, NodeConstraints } from '@syncfusion/ej2-diagrams';
 import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
-import { ContextMenuItems, EntityRef, OrganizationChartEvent, OrganizationChartEventArgs, OrganizationRole, ToggleItem } from '../../role';
+import { ContextMenuItems, User, OrganizationChartEventArgs, OrganizationRole, ToggleItem } from '../../role';
 
 Diagram.Inject(DataBinding, HierarchicalTree, LayoutAnimation);
 
@@ -152,7 +152,7 @@ export class ChartViewComponent
     let role = originalData.find(r => r.id === data.pid);
     if (role)
     {
-      const user: EntityRef = { id: roleData.id, name: data.name };
+      const user: User = { id: roleData.id, name: data.name };
       if (role.users)
       {
         role.users.push(user);

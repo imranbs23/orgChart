@@ -46,13 +46,12 @@ export interface OrganizationRole {
   isRole: boolean;
   hidden?: boolean;
   userHidden?: boolean;
-  users?: EntityRef[];
+  users?: User[];
   [key: string]: unknown;
 }
-export declare class EntityRef {
-  id: string;
-  name: string;
+export interface User{
+  id:string;
+  name:string;
+  email?:string;
   hidden?: boolean;
 }
-
-

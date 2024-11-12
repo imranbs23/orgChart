@@ -15,11 +15,12 @@ import { Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/cor
 import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import { v4 as uuidv4 } from 'uuid';
 import {
   ChartDataType,
   CONTEXT_MENU_ITEMS,
   ContextMenuItems,
-  EntityRef,
+  User,
   MOUSE_BUTTONS,
   OrganizationChartEvent,
   OrganizationChartEventArgs,
@@ -42,7 +43,7 @@ import {
 })
 export class ListViewComponent implements OnInit {
 
-  @ViewChild('treevalidate') treevalidate?: TreeViewComponent;
+  @ViewChild('roleTree') roleTree?: TreeViewComponent;
   @ViewChild('contentmenutree') contentmenutree?: ContextMenuComponent;
   @Output() actionComplete = new EventEmitter<OrganizationChartEventArgs>();
   private localData: OrganizationRole[] = [];
@@ -50,7 +51,6 @@ export class ListViewComponent implements OnInit {
   public menuItems: MenuItemModel[] = CONTEXT_MENU_ITEMS;
   public showUsers: boolean = true;
   private eventType: OrganizationChartEvent = ContextMenuItems.AddRole;
-  public index: number = 1;
 
   constructor(private http: HttpClient) {
 
@@ -66,7 +66,7 @@ export class ListViewComponent implements OnInit {
 
   protected nodeclicked(args: NodeClickEventArgs) : void {
     if (args.event.button === MOUSE_BUTTONS.RIGHT || args.event.button === MOUSE_BUTTONS.LEFT) {
-      (this.treevalidate as TreeViewComponent).selectedNodes = [args.node.getAttribute('data-uid') as string];
+      (this.roleTree as TreeViewComponent).selectedNodes = [args.node.getAttribute('data-uid') as string];
     }
   }
 
@@ -81,8 +81,9 @@ export class ListViewComponent implements OnInit {
     }
   }
 
+  // todo: add the logic to disable the menu items based on the selected node
   protected beforeopen(args: BeforeOpenCloseMenuEventArgs) : void {
-    let targetNodeId: string = this.treevalidate?.selectedNodes[0] as string;
+    let targetNodeId: string = this.roleTree?.selectedNodes[0] as string;
     let targetNode: Element = document.querySelector('[data-uid="' + targetNodeId + '"]') as Element;
 
     if (targetNode.classList.contains('remove')) {
@@ -98,13 +99,14 @@ export class ListViewComponent implements OnInit {
     }
   }
 
+  // todo: add the logic to disable the menu items based on the selected node
   protected onNodeEdited(args: NodeEditEventArgs): void {
     const selectedData: any = args.nodeData as any;
     // const node: RoleWithUsers | undefined = this.localData.find(a => a.id == selectedData.id);
     // if (node) {
     //   node.name = args.newText;
     // }
-    let targetNodeId: string = this.treevalidate?.selectedNodes[0] as string;
+    // let targetNodeId: string = this.roleTree?.selectedNodes[0] as string;
     switch (this.eventType) {
 
       case ContextMenuItems.AddRole:
@@ -168,23 +170,21 @@ export class ListViewComponent implements OnInit {
 
   protected addRole(): void {
     const selectedNode = this.getSelectedNode();
-    let nodeId: string = "tree_" + this.index;
+    let nodeId: string = uuidv4();
     let item: OrganizationRole = { id: nodeId, pid: selectedNode, name: "New Role", isRole: true, hasChild: false };
-    this.treevalidate?.addNodes([item as unknown as { [key: string]: Object }], selectedNode, null as any);
-    this.index++;
+    this.roleTree?.addNodes([item as unknown as { [key: string]: Object }], selectedNode, null as any);
     this.localData.push(item);
-    this.treevalidate?.beginEdit(nodeId);
+    this.roleTree?.beginEdit(nodeId);
     this.eventType = ContextMenuItems.AddRole;
   }
 
   protected addUser(): void {
     const selectedNode = this.getSelectedNode();
-    let nodeId: string = "tree_" + this.index;
+    let nodeId: string = uuidv4()
     let item: OrganizationRole = { id: nodeId, pid: selectedNode, name: "New User", isRole: false, hasChild: false };
-    this.treevalidate?.addNodes([item as unknown as { [key: string]: Object }], selectedNode, null as any);
-    this.index++;
+    this.roleTree?.addNodes([item as unknown as { [key: string]: Object }], selectedNode, null as any);
     this.localData.push(item);
-    this.treevalidate?.beginEdit(nodeId);
+    this.roleTree?.beginEdit(nodeId);
     this.eventType = ContextMenuItems.AddUser;
   }
 
@@ -276,7 +276,7 @@ export class ListViewComponent implements OnInit {
         users : role.users
       });
 
-      role.users?.forEach((user: EntityRef) =>
+      role.users?.forEach((user: User) =>
       {
         roleWithUsers.push({
           id: user.id,
@@ -297,7 +297,7 @@ export class ListViewComponent implements OnInit {
 
   private updateDataSource(dataSource: OrganizationRole[]): void {
     this.field = { ...this.field, dataSource: dataSource};
-    this.treevalidate?.refresh();
+    this.roleTree?.refresh();
   }
 
   private getSelectedNode(): string {
@@ -311,12 +311,12 @@ export class ListViewComponent implements OnInit {
   }
 
   private getFirstSelectedNode(): string {
-    const selectedNodes = (this.treevalidate as TreeViewComponent).selectedNodes;
+    const selectedNodes = (this.roleTree as TreeViewComponent).selectedNodes;
     return selectedNodes.length > 0 ? selectedNodes[0] as string : '';
   }
 
   private getRootNodes(): OrganizationRole[] {
-    const treeData = (this.treevalidate as TreeViewComponent).getTreeData() as OrganizationRole[];
+    const treeData = (this.roleTree as TreeViewComponent).getTreeData() as OrganizationRole[];
     return treeData.filter((node) => !node.pid);
   }
 }

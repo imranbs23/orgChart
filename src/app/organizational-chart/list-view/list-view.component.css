@@ -118,6 +118,14 @@
   background-color: #475767 !important;
   border-color: #475767 !important;
 }
+.e-treeview .e-list-item.e-node-focus{
+  background-color: #475767 !important;
+  border-color: #475767 !important;
+}
+.e-treeview .e-list-item.e-node-focus > .e-fullrow{
+  background-color: #475767 !important;
+  border-color: #475767 !important;
+}
 .node-content {
   background-color: #3B4958;
   display: flex;
@@ -176,3 +184,4 @@
   background-color: #4B5563;
  color: white;
 }
+
